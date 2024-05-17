@@ -12,7 +12,7 @@ const Globalstyles = createGlobalStyle`
   body {
     /* 62.5% => 10rem, 1rem = 10px */
     font-size: 62.5% !important;
-    font-family: 'Pretendard-Regular';
+    font-family: 'Pretendard-Regular', "Inter", sans-serif;
   }
 
   a {

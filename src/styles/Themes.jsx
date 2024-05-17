@@ -4,5 +4,6 @@ export const dark = {
     fontGray: "#949494",
     fontBrown: "#C37706",
     fontRed: "#FF5050",
-    tagBrown: "#C86400"
+    tagBrown: "#C86400",
+    inputBorder: "#CACDD2"
 }
