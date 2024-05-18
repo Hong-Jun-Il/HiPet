@@ -38,7 +38,8 @@ const LoginSection = styled.form`
     display: flex;
     align-items: center;
     flex-direction: column;
-    min-height: 302px;
+    min-height: 308px;
+    border: 1px solid red;
 `;
 
 export default LoginPage;
