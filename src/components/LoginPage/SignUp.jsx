@@ -1,7 +1,7 @@
 import React, { useCallback, useEffect, useState } from 'react';
 import UserInput from './UserInput';
 import LoginPageButton from './LoginPageButton';
-import useInput from '../hooks/useInput';
+import useInput from '../../hooks/useInput';
 
 const SignUp = () => {
     const [username, onChangeUsername, setUsername] = useInput("");

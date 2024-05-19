@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import logo from "../assets/HiPetLogo.png";
+import logo from "../../assets/HiPetLogo.png";
 
 
 const LoginPageHeader = () => {

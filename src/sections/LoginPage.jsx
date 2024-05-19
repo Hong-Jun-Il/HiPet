@@ -1,11 +1,10 @@
 import React from 'react';
 import styled from 'styled-components';
-import UserInput from '../components/UserInput';
-import LoginPageHeader from '../components/LoginPageHeader';
 import { Route, Routes } from 'react-router-dom';
-import SignUpAndSignIn from '../components/SignUpAndSignIn';
-import SignUp from '../components/SignUp';
-import SignIn from '../components/SignIn';
+import LoginPageHeader from '../components/LoginPage/LoginPageHeader';
+import SignUpAndSignIn from '../components/LoginPage/SignUpAndSignIn';
+import SignIn from '../components/LoginPage/SignIn';
+import SignUp from '../components/LoginPage/SignUp';
 
 const LoginPage = () => {
 

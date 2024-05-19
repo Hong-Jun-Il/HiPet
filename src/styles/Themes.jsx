@@ -5,5 +5,6 @@ export const dark = {
     fontBrown: "#C37706",
     fontRed: "#FF5050",
     tagBrown: "#C86400",
-    inputBorder: "#CACDD2"
+    inputBorder: "#CACDD2",
+    MainBackGroundColorWhite: "#fff",
 }

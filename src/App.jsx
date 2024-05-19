@@ -1,10 +1,9 @@
 import { useRef } from "react";
 import { LocomotiveScrollProvider } from 'react-locomotive-scroll'
 import 'locomotive-scroll/dist/locomotive-scroll.css'
-import Home from "./sections/Home";
 import routes from "./utils/constants/routes";
 import { Routes, Route } from "react-router-dom";
-import LoginPage from "./sections/LoginPage";
+import Main from "./sections/Main";
 
 
 function App() {
@@ -29,10 +28,7 @@ function App() {
         containerRef={containerRef}
       >
         <main data-scroll-container ref={containerRef}>
-          {/* <Routes>
-            <Route path={routes.hong} element={<LoginPage />} />
-          </Routes> */}
-          <LoginPage />
+          <Main />
         </main>
       </LocomotiveScrollProvider>
     </>
