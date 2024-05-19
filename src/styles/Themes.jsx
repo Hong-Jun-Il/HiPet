@@ -1,11 +1,12 @@
 export const dark = {
     yellow: "#FFC800",
-    fontBasicDark: "#000",
+    basicDark: "#000",
+    basicWhite: "#fff",
     fontDark: "#323232",
     fontGray: "#949494",
     fontBrown: "#C37706",
     fontRed: "#FF5050",
     tagBrown: "#C86400",
     inputBorder: "#CACDD2",
-    mainBackGroundColorWhite: "#fff",
+    mainBannerBackGroundColor: "#D9D9D9",
 }

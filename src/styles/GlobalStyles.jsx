@@ -19,9 +19,9 @@ const Globalstyles = createGlobalStyle`
     text-decoration: none;
   }
 
-  ul,
+  li,
   ol {
-    list-style: none;
+    list-style-type: none;
   }
 
   img, 
