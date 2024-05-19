@@ -19,8 +19,8 @@ const LoginPageHeader = () => {
 
 const LoginPageHeaderStyle = styled.header`
 position: absolute;
-margin-top: 52px;
-left: 370px;
+width: 100%;
+margin-top: 48px;
 display: flex;
 font-family: Inter;
 
@@ -28,6 +28,7 @@ font-family: Inter;
     width: 62px;
     height: 52px;
     margin-right: 78px;
+    margin-left: 370px;
 }
 
 div p{

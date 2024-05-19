@@ -11,7 +11,7 @@ const LoginPageButton = ({ text, onClick }) => {
 
 const LoginPageButtonStyle = styled.button`
     position: absolute;
-    bottom: -50%;
+    bottom: -45%;
     background: ${({ theme }) => theme.yellow};
     /* padding: 21px 78px; */
     width: 252px;

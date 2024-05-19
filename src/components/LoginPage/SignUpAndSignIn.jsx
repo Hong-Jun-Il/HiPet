@@ -21,7 +21,7 @@ const SignUpAndSignIn = () => {
 const SignUpAndSignInWrapper = styled.div`
     width: 270px;
     position: absolute;
-    top: 32%;
+    top: 29%;
     left: 50%;
     transform: translate3d(-50%, -50%, 0);
     font-weight: 700;

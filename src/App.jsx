@@ -4,6 +4,7 @@ import 'locomotive-scroll/dist/locomotive-scroll.css'
 import routes from "./utils/constants/routes";
 import { Routes, Route } from "react-router-dom";
 import Main from "./sections/Main";
+import LoginPage from "./sections/LoginPage";
 
 
 function App() {
@@ -28,6 +29,7 @@ function App() {
         containerRef={containerRef}
       >
         <main data-scroll-container ref={containerRef}>
+          {/* <LoginPage /> */}
           <Main />
         </main>
       </LocomotiveScrollProvider>

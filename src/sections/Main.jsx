@@ -10,11 +10,10 @@ const Main = () => {
     );
 };
 
-const MainPage = styled.section`
+const MainPage = styled.main`
     width: 100%;
     min-height: 150vh;
     background: ${({theme})=>theme.mainBackGroundColorWhite};
-    
 `;
 
 export default Main;
