@@ -1,32 +1,49 @@
-import React, { useState } from 'react';
+import React, { useCallback, useState } from 'react';
 import UserInput from './UserInput';
 import LoginPageButton from './LoginPageButton';
+import useInput from '../hooks/useInput';
 
 const SignIn = () => {
-    const [input, setInput] = useState({
-        id: "",
-        pw: ""
-    })
-    const {id, pw} = input;
+    const [id, onChangeId, setId] = useInput("");
+    const [pw, onChangePw, setPw] = useInput("");
 
-    function onChange(e){
-        const {name, value} = e.target;
-        
-        setInput({
-            ...input,
-            [name]: value
-        })
+    const onReset = useCallback(() => {
+        setId("");
+        setPw("");
+    }, [setId, setPw]);
 
-        console.log(id);
-        console.log(pw);
+    const onLogin = (e) => {
+        e.preventDefault();
+
+        if (!id || !pw) {
+            alert("모든 값을 정확하게 입력해주세요.");
+            return;
+        }
+
+        const storedId = localStorage.getItem(id);
+        if (!storedId) {
+            alert("아이디를 확인해주세요.");
+            return;
+        }
+        else {
+            const storedPassword = JSON.parse(storedId).pw;
+            if (pw !== storedPassword) {
+                alert("비밀번호를 확인해주세요.");
+                return;
+            }
+            else {
+                alert("로그인 성공!");
+                onReset();
+            }
+        }
     }
-    
+
     return (
-    <>
-        <UserInput text="아이디를 입력해주세요" type="text" name="id" value={id} onChange={onChange} />
-        <UserInput text="비밀번호를 입력해주세요" type="password" name="pw" value={pw} onChange={onChange} />
-        <LoginPageButton text={"로그인하기"} />
-    </>
+        <>
+            <UserInput text="아이디를 입력해주세요" type="text" name="id" value={id} onChange={onChangeId} />
+            <UserInput text="비밀번호를 입력해주세요" type="password" name="pw" value={pw} onChange={onChangePw} />
+            <LoginPageButton text={"로그인하기"} onClick={onLogin} />
+        </>
     );
 };
 

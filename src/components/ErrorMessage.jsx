@@ -1,7 +1,7 @@
 import React from 'react';
 import styled, { css } from 'styled-components';
 
-const ErrorMessage = ({name, value}) => {
+const ErrorMessage = ({ name, value }) => {
     let message = null;
 
     if (value.length > 1) {
@@ -21,9 +21,9 @@ const ErrorMessage = ({name, value}) => {
 
 const Message = styled.p`
     opacity: 0;
-    ${props=>
-    props.value>=1&&
-    css`
+    ${props =>
+        props.value >= 1 &&
+        css`
         opacity: 1;
     `}
 `

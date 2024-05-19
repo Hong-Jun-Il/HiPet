@@ -1,9 +1,9 @@
 import React from 'react';
 import styled from 'styled-components';
 
-const LoginPageButton = ({ text }) => {
+const LoginPageButton = ({ text, onClick }) => {
     return (
-        <LoginPageButtonStyle >
+        <LoginPageButtonStyle onClick={onClick} >
             {text}
         </LoginPageButtonStyle>
     );

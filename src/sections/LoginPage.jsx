@@ -8,6 +8,7 @@ import SignUp from '../components/SignUp';
 import SignIn from '../components/SignIn';
 
 const LoginPage = () => {
+
     return (
         <LoginPageWrapper>
         <LoginPageHeader />
@@ -39,7 +40,6 @@ const LoginSection = styled.form`
     align-items: center;
     flex-direction: column;
     min-height: 308px;
-    border: 1px solid red;
 `;
 
 export default LoginPage;

@@ -1,34 +1,7 @@
 import React, { useState } from 'react';
 import styled, { css } from 'styled-components';
 
-const UserInput = ({ text, type, name, value, onChange }) => {
-  const usernameRegex = /^[a-zA-Z가-힣]{2,}$/;
-  const idRegex = /^[a-zA-Z]{2,}[a-zA-Z0-9]*$/;
-  const pwRegex = /^(?=.*[a-zA-Z])(?=.*[!@#$%^*+=-])(?=.*[0-9]).{8,15}$/;
-  const [isValid, setIsValue] = useState({
-    usernameIsValid: false,
-    idIsValid: false,
-    pwIsValid: false
-  })
-
-  const validateRegex = (regex, value) => {
-    return regex.test(value);
-  };
-
-  const getMessage = (name, value) => {
-    switch (name) {
-      case "username":
-        if(validateRegex(usernameRegex, value)){
-          
-        }
-      case "id":
-        return !validateRegex(idRegex, value) ? "올바른 아이디를 입력하세요." : null;
-      case "pw":
-        return !validateRegex(pwRegex, value) ? "올바른 비밀번호를 입력하세요." : null;
-      default:
-        return null;
-    }
-  };
+const UserInput = ({ text, msg, type, name, value, onChange }) => {
 
   return (
     <InputWrapper>
@@ -40,8 +13,8 @@ const UserInput = ({ text, type, name, value, onChange }) => {
         onChange={onChange}
       />
       <div>
-        <Message isInputted={value.length >= 1} name={name}>
-          {value.length >= 1 && getMessage(name, value)}
+        <Message isInputted={value.length >= 1}>
+          {msg}
         </Message>
       </div>
     </InputWrapper>
@@ -72,7 +45,7 @@ const InputStyle = styled.input`
 const Message = styled.p`
     position: absolute;
     top: 5px;
-    left: 20px;
+    left: 46px;
     opacity: 0;
     ${props =>
     props.isInputted &&
