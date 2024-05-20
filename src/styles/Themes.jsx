@@ -9,4 +9,5 @@ export const dark = {
     tagBrown: "#C86400",
     inputBorder: "#CACDD2",
     mainBannerBackGroundColor: "#D9D9D9",
+    mainContentCardBackGround: "#F7F8FA"
 }

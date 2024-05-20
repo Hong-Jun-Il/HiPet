@@ -3,7 +3,7 @@ import styled from 'styled-components';
 import MainItem from './MainItem';
 
 const MainContents = () => {
-    const t = [1,2,3,4,5];
+    const t = [1,2,3,4,5]; 
     return (
         <MainContentsSection>
             <span className='line'></span>

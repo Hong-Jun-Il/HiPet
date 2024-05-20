@@ -5,7 +5,7 @@ import MainBanner from '../components/Main/MainBanner';
 import MainSearch from '../components/Main/MainSearch';
 import MainContents from '../components/Main/MainContents';
 
-const Main = () => {
+const Main = () => {    
     return (
         <MainPage>
             <MainHeader />
