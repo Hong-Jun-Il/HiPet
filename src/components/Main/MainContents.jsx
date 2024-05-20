@@ -1,23 +1,36 @@
-import React from 'react';
+import React, { useRef, useState } from 'react';
 import styled from 'styled-components';
 import MainItem from './MainItem';
+import MainPagination from './MainPagination';
 
-const MainContents = () => {
-    const t = [1,2,3,4,5]; 
+const MainContents = ({coinsData}) => {
+
+    const [currentPage, setCurrentPage] = useState(1);
+    const [postsPerPage, setPostPerPage] = useState(15);
+    const lastPostIndex = currentPage * postsPerPage;
+    const firstPostIndex = lastPostIndex - postsPerPage;
+    const currentPosts = coinsData.slice(firstPostIndex, lastPostIndex);
+    const forScroll = useRef(null);
+
+    const handleClick = () =>{
+        forScroll.current.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+    
     return (
         <MainContentsSection>
             <span className='line'></span>
-            <Container>
+            <Container ref={forScroll}>
                 <ContentsHeader>
-                    <h4>총 123건</h4>
+                    <h4>총 {coinsData.length}건</h4>
                     {/* 여기 나중에 수정해야함 */}
                     <span>추천순</span>
                 </ContentsHeader>
                 <ContentsWrapper>
-                    {t.map((e)=>{
-                        return <MainItem text={e} />
+                    {currentPosts.map((coin, i)=>{
+                        return <MainItem key={i} coinName = {coin.name} coinPrice = {coin.current_price} coinImg = {coin.image} />
                     })}
                 </ContentsWrapper>
+                <MainPagination handleClick = {handleClick} totalPosts={coinsData.length} postsPerPage={postsPerPage} setCurrentPage={setCurrentPage} />
             </Container>
         </MainContentsSection>
     );
@@ -70,7 +83,7 @@ const ContentsWrapper = styled.div`
     grid-template-columns: repeat(3, 1fr);
     row-gap: 30px;
     column-gap: 20px;
-    border: 1px solid red;
+    margin-bottom: 229px;
 `;
 
 export default MainContents;

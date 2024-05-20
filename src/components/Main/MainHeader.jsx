@@ -25,6 +25,7 @@ const MainHeaderStyle = styled.header`
   width: 100%;
   display: flex;
   justify-content: space-between;
+  border: 1px solid red;
   align-items: center;
   margin-top: 48px;
 
