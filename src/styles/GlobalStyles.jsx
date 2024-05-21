@@ -28,12 +28,16 @@ const Globalstyles = createGlobalStyle`
   video{
     width: 100%;
     height: 100%;
-    object-fit: cover;
+    object-fit: fill;
   }
 
   button {
     cursor: pointer;
     border: 0;
+  }
+
+  .wrap{
+    width: 1180px;
   }
 
   @font-face {

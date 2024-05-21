@@ -5,17 +5,19 @@ import logo from "../../assets/HiPetLogo.png";
 const MainHeader = () => {
     return (
         <MainHeaderStyle>
-            <div className='logoWrapper'>
-                <img src={logo} alt="HiPetLogo" />
+            <div className='wrap'>
+                <div className='logoWrapper'>
+                    <img src={logo} alt="HiPetLogo" />
+                </div>
+                <ul className='nav'>
+                    <li>채팅</li>
+                    <li>등록하기</li>
+                    <li>마이페이지</li>
+                    <li className='profileImgWrapper'>
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c2/GitHub_Invertocat_Logo.svg/1200px-GitHub_Invertocat_Logo.svg.png" alt="profile" />
+                    </li>
+                </ul>
             </div>
-            <ul className='nav'>
-                <li>채팅</li>
-                <li>등록하기</li>
-                <li>마이페이지</li>
-                <li className='profileImgWrapper'>
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c2/GitHub_Invertocat_Logo.svg/1200px-GitHub_Invertocat_Logo.svg.png" alt="profile" />
-                </li>
-            </ul>
         </MainHeaderStyle>
     );
 };
@@ -23,28 +25,28 @@ const MainHeader = () => {
 const MainHeaderStyle = styled.header`
   position: absolute;
   width: 100%;
-  display: flex;
-  justify-content: space-between;
-  border: 1px solid red;
-  align-items: center;
   margin-top: 48px;
 
-  .logoWrapper{
-    margin-left: 370px;
+  .wrap{
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    .logoWrapper{
     cursor: pointer;
-  }
+    }
 
   .nav{
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin-right: 370px;
     min-width: 170px;
     font-size: 14px;
 
     li{
         margin-right: 26px;
-        color: ${({theme})=>theme.fontDark};
+        color: ${({ theme }) => theme.fontDark};
         cursor: pointer;
     }
 
@@ -59,9 +61,10 @@ const MainHeaderStyle = styled.header`
         display: flex;
         justify-content: center;
         align-items: center;
-        background: ${({theme})=>theme.inputBorder};
+        background: ${({ theme }) => theme.inputBorder};
         overflow: hidden;
     }
+  }
   }
 `;
 

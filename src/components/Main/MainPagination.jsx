@@ -10,7 +10,7 @@ const MainPagination = ({ totalPosts, postsPerPage, setCurrentPage }) => {
         <Pagination>
             {pages.map((e, i) => {
                 return (
-                    <button key={i} onClick={()=>setCurrentPage(e)}>
+                    <button key={i} onClick={() => setCurrentPage(e)}>
                         {e}
                     </button>
                 );
@@ -20,10 +20,13 @@ const MainPagination = ({ totalPosts, postsPerPage, setCurrentPage }) => {
 };
 
 const Pagination = styled.div`
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%, 0);
+    bottom: -.5%;
     button {
         cursor: pointer;
         padding: 10px;
-        margin-left: 20px;
         background: transparent;
         font-size: 36px;
     }

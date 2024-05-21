@@ -2,35 +2,35 @@ import React, { useRef, useState } from 'react';
 import styled from 'styled-components';
 import MainItem from './MainItem';
 import MainPagination from './MainPagination';
+import EmptyDataPage from './EmptyDataPage';
 
-const MainContents = ({coinsData}) => {
+const MainContents = ({ coinsData }) => {
 
     const [currentPage, setCurrentPage] = useState(1);
     const [postsPerPage, setPostPerPage] = useState(15);
     const lastPostIndex = currentPage * postsPerPage;
     const firstPostIndex = lastPostIndex - postsPerPage;
     const currentPosts = coinsData.slice(firstPostIndex, lastPostIndex);
-    const forScroll = useRef(null);
 
-    const handleClick = () =>{
-        forScroll.current.scrollTo({ top: 0, behavior: 'smooth' });
-    }
-    
     return (
         <MainContentsSection>
             <span className='line'></span>
-            <Container ref={forScroll}>
+            <Container className='wrap'>
                 <ContentsHeader>
                     <h4>총 {coinsData.length}건</h4>
                     {/* 여기 나중에 수정해야함 */}
                     <span>추천순</span>
                 </ContentsHeader>
-                <ContentsWrapper>
-                    {currentPosts.map((coin, i)=>{
-                        return <MainItem key={i} coinName = {coin.name} coinPrice = {coin.current_price} coinImg = {coin.image} />
-                    })}
-                </ContentsWrapper>
-                <MainPagination handleClick = {handleClick} totalPosts={coinsData.length} postsPerPage={postsPerPage} setCurrentPage={setCurrentPage} />
+                {coinsData.length > 0 ? (
+                    <ContentsWrapper>
+                        {currentPosts.map((coin, i) => {
+                            return <MainItem key={i} coin={coin} />
+                        })}
+                        <MainPagination totalPosts={coinsData.length} postsPerPage={postsPerPage} setCurrentPage={setCurrentPage} />
+                    </ContentsWrapper>
+                ) : (
+                    <EmptyDataPage />
+                )}
             </Container>
         </MainContentsSection>
     );
@@ -52,7 +52,6 @@ const MainContentsSection = styled.section`
 const Container = styled.div`
     margin: 0 auto;
     display: flex;
-    width: fit-content;
     flex-direction: column;
     justify-content: center;
     align-items: center;
@@ -63,8 +62,7 @@ const ContentsHeader = styled.div`
     display: flex;
     justify-content: space-between;
     align-items: center;
-    color: ${({theme})=>theme.fontDark};
-    margin-bottom: 109px;
+    color: ${({ theme }) => theme.fontDark};
 
     h4{
         font-size: 36px;
@@ -79,11 +77,13 @@ const ContentsHeader = styled.div`
 `;
 
 const ContentsWrapper = styled.div`
+    margin-top: 109px;
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     row-gap: 30px;
     column-gap: 20px;
     margin-bottom: 229px;
+    width: 100%;
 `;
 
 export default MainContents;

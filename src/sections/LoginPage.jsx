@@ -14,7 +14,7 @@ const LoginPage = () => {
         <SignUpAndSignIn />
         <LoginSection>
             <Routes>
-                <Route path='/signUp' element={<SignUp />} />
+                <Route path='/' element={<SignUp />} />
                 <Route path='/signIn' element={<SignIn />} />
             </Routes>
         </LoginSection>

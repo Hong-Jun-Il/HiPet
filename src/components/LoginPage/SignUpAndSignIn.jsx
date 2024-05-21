@@ -7,7 +7,7 @@ const SignUpAndSignIn = () => {
 
     return (
         <SignUpAndSignInWrapper>
-            <LinkStyled to="/signUp" selected={location.pathname === "/signUp"}>
+            <LinkStyled to="/" selected={location.pathname === "/"}>
                 회원가입
             </LinkStyled>
             <span className='line'></span>

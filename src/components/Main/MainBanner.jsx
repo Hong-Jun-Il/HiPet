@@ -23,7 +23,7 @@ const MainBanner = () => {
     );
 };
 
-const MainBannerWrapper = styled.div`
+const MainBannerWrapper = styled.section`
     width: 100%;
     height: 553px;
     background: ${({theme})=>theme.mainBannerBackGroundColor};
@@ -46,12 +46,12 @@ const Vector= styled.div`
 
     ${({position})=>position==="left"&&
     css`
-        left: 320px;
+        left: 16.5vw;
     `};
 
     ${({position})=>position==="right" && 
     css`
-        right: 321px;
+        right: 16.5vw;
     `}
 `;
 
