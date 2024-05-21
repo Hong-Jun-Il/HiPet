@@ -5,36 +5,33 @@ import logo from "../../assets/HiPetLogo.png";
 const MainHeader = () => {
     return (
         <MainHeaderStyle>
-            <div className='wrap'>
-                <div className='logoWrapper'>
-                    <img src={logo} alt="HiPetLogo" />
-                </div>
-                <ul className='nav'>
-                    <li>채팅</li>
-                    <li>등록하기</li>
-                    <li>마이페이지</li>
-                    <li className='profileImgWrapper'>
-                        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c2/GitHub_Invertocat_Logo.svg/1200px-GitHub_Invertocat_Logo.svg.png" alt="profile" />
-                    </li>
-                </ul>
+            <div className='logoWrapper'>
+                <img src={logo} alt="HiPetLogo" />
             </div>
+            <ul className='nav'>
+                <li>채팅</li>
+                <li>등록하기</li>
+                <li>마이페이지</li>
+                <li className='profileImgWrapper'>
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c2/GitHub_Invertocat_Logo.svg/1200px-GitHub_Invertocat_Logo.svg.png" alt="profile" />
+                </li>
+            </ul>
         </MainHeaderStyle>
     );
 };
 
 const MainHeaderStyle = styled.header`
   position: absolute;
-  width: 100%;
+  left: 50%;
+  transform: translate(-50%, 0);
+  width: 1180px;
   margin-top: 48px;
-
-  .wrap{
-    margin: 0 auto;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 
     .logoWrapper{
-    cursor: pointer;
+        cursor: pointer;
     }
 
   .nav{
@@ -64,7 +61,6 @@ const MainHeaderStyle = styled.header`
         background: ${({ theme }) => theme.inputBorder};
         overflow: hidden;
     }
-  }
   }
 `;
 

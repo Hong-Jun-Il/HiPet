@@ -38,6 +38,7 @@ const Globalstyles = createGlobalStyle`
 
   .wrap{
     width: 1180px;
+    margin: 0 auto;
   }
 
   @font-face {

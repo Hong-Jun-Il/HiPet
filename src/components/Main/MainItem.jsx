@@ -8,7 +8,7 @@ const MainItem = ({ coin }) => {
 
     return (
         // 밑에 온클릭으로 페이지 이동
-        <MainCard onClick={()=>console.log(coin.name)}>
+        <MainCard onClick={()=>navigate("/detailedPage", {state: {coin}})}>
             <div className="imgWrapper">
                     <img src={coin.image} alt="" />
                 </div>

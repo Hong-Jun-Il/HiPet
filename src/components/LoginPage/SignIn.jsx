@@ -2,10 +2,13 @@ import React, { useCallback, useState } from 'react';
 import LoginPageButton from './LoginPageButton';
 import useInput from '../../hooks/useInput';
 import UserInput from './UserInput';
+import { useNavigate } from 'react-router-dom';
+
 
 const SignIn = () => {
     const [id, onChangeId, setId] = useInput("");
     const [pw, onChangePw, setPw] = useInput("");
+    const navigate = useNavigate();
 
     const onReset = useCallback(() => {
         setId("");
@@ -34,6 +37,7 @@ const SignIn = () => {
             else {
                 alert("로그인 성공!");
                 onReset();
+                navigate("/main")
             }
         }
     }
