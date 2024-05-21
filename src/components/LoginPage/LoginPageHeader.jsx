@@ -23,15 +23,19 @@ width: 100%;
 margin-top: 48px;
 display: flex;
 font-family: Inter;
+justify-content: center;
 
 .logoWrapper{
     width: 62px;
     height: 52px;
     margin-right: 78px;
-    margin-left: 370px;
 }
 
-div p{
+> div{
+    margin-right: 30vw;
+}
+
+> div p{
     position: relative;
     top: -3px;
     font-weight: 1000;

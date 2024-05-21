@@ -22,7 +22,7 @@ const LoginPage = () => {
     );
 };
 
-const LoginPageWrapper = styled.section`
+const LoginPageWrapper = styled.main`
     width: 100%;
     min-height: 100vh;
     display: flex;

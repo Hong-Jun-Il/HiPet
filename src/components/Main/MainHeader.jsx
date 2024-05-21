@@ -23,9 +23,10 @@ const MainHeader = () => {
 const MainHeaderStyle = styled.header`
   position: absolute;
   left: 50%;
+  top: 48px;
   transform: translate(-50%, 0);
-  width: 1180px;
-  margin-top: 48px;
+  min-width: 1180px;
+  max-width: 1180px;
   display: flex;
   justify-content: space-between;
   align-items: center;

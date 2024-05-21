@@ -15,7 +15,7 @@ const MainContents = ({ coinsData }) => {
     return (
         <MainContentsSection>
             <span className='line'></span>
-            <Container className='wrap'>
+            <Container>
                 <ContentsHeader>
                     <h4>총 {coinsData.length}건</h4>
                     {/* 여기 나중에 수정해야함 */}
@@ -54,6 +54,8 @@ const Container = styled.div`
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    max-width: 1180px;
+    margin: 0 auto;
 `;
 
 const ContentsHeader = styled.div`
