@@ -61,7 +61,6 @@ const ProductInfo = ({data}) => {
 };
 
 const ProductInfoWrapper = styled.section`
-    border: 1px solid red;
     display: flex;
     flex-direction: column;
     height: fit-content;

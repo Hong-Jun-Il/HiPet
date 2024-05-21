@@ -20,12 +20,20 @@ const DetailedPage = () => {
 
 const DetailedPageWrapper = styled.main`
     min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    //마진 상쇄 해결하기 위한 border
+    border: 0.1px solid transparent;
     
     .wrap{
-        position: relative;
-        top: 158px;
+        height: fit-content;
         margin: 0 auto;
         max-width: 1180px;
+    }
+
+    > .wrap{
+        margin-top: 158px;
+        margin-bottom: 157px;
     }
 `;
 
