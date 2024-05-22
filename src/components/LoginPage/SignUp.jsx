@@ -124,6 +124,7 @@ const SignUp = () => {
 
     return (
         <>
+        {/* 주소, 닉네임, 추가 */}
             <UserInput text="이름을 입력해주세요" msg={usernameError} type="text" name="username" value={username} onChange={onChangeUsername} />
             <UserInput text="아이디를 입력해주세요" msg={idError} type="text" name="id" value={id} onChange={onChangeId} />
             <UserInput text="비밀번호를 입력해주세요" msg={pwError} type="password" name="pw" value={pw} onChange={onChangePw} />

@@ -5,13 +5,16 @@ import ChannelReview from './ChannelReview';
 
 const SellerInfo = () => {
     const [isSelected, setSelect] = useState(true);
+    const [rating, setRating] = useState(1.8);
+    const [reviews, setReviews] = useState(60);
+
     return (
         <SellerInfoWrapper>
             <SelectBtns className='wrap'>
                 <StyledButton isSelected={isSelected} onClick={() => setSelect(true)}>채널정보</StyledButton>
                 <StyledButton isSelected={!isSelected} onClick={() => setSelect(false)}>입양후기</StyledButton>
             </SelectBtns>
-            {isSelected ? <ChannelInfo /> : <ChannelReview/>}
+            {isSelected ? <ChannelInfo isSelected={isSelected} rating={rating} reviews={reviews} /> : <ChannelReview isSelected={isSelected} rating={rating} reviews={reviews} />}
         </SellerInfoWrapper>
     );
 };
@@ -19,11 +22,10 @@ const SellerInfo = () => {
 const SellerInfoWrapper = styled.section`
     width: 100%;
     border-top: 1px solid #CACDD2;
-`; 
+`;
 
 const SelectBtns = styled.div`
     display: flex;
-    border: 1px solid red;
 `;
 
 const StyledButton = styled.button`

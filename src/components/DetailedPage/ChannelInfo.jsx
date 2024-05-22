@@ -1,7 +1,9 @@
 import React from 'react';
 import styled from 'styled-components';
+import Stars from './Stars';
 
-const ChannelInfo = () => {
+const ChannelInfo = ({ rating, reviews }) => {
+
     return (
         <ChannelInfoWrapper className="wrap">
             <div className="seller">
@@ -18,6 +20,10 @@ const ChannelInfo = () => {
                     </div>
                 </div>
             </div>
+            <div className="reviewRatingWrapper">
+                <Stars rating={rating} size={2.5} />
+                <span>{rating}</span>
+            </div>
         </ChannelInfoWrapper>
     );
 };
@@ -26,6 +32,7 @@ const ChannelInfoWrapper = styled.div`
     padding-top: 100px;
     display: flex;
     justify-content: space-between;
+    padding-bottom: 80px;
 
     .seller{
         display: flex;
@@ -49,7 +56,18 @@ const ChannelInfoWrapper = styled.div`
                 font-size: 12px;
             }
         }
+    }
 
+    .reviewRatingWrapper{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 20px;
+
+        > span{
+            margin-bottom: 5px;
+            margin-left: 15px;
+        }
     }
 `;
 

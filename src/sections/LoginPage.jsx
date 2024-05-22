@@ -1,23 +1,28 @@
-import React from 'react';
+import React, { useState } from 'react';
 import styled from 'styled-components';
 import { Route, Routes } from 'react-router-dom';
 import LoginPageHeader from '../components/LoginPage/LoginPageHeader';
-import SignUpAndSignIn from '../components/LoginPage/SignUpAndSignIn';
 import SignIn from '../components/LoginPage/SignIn';
 import SignUp from '../components/LoginPage/SignUp';
 
 const LoginPage = () => {
+    const [isSignUpPage, setIsSignUpPage] = useState(true);
 
     return (
         <LoginPageWrapper>
-        <LoginPageHeader />
-        <SignUpAndSignIn />
-        <LoginSection>
-            <Routes>
-                <Route path='/' element={<SignUp />} />
-                <Route path='/signIn' element={<SignIn />} />
-            </Routes>
-        </LoginSection>
+            <LoginPageHeader />
+            <SignUpAndSignIn>
+                <SelectPage isSignUpPage={isSignUpPage} onClick={()=>setIsSignUpPage(true)}>
+                    회원가입
+                </SelectPage>
+                <span className='line'></span>
+                <SelectPage isSignUpPage={!isSignUpPage} onClick={()=>setIsSignUpPage(false)}>
+                    로그인
+                </SelectPage>
+            </SignUpAndSignIn>
+            <LoginSection>
+                {isSignUpPage ? <SignUp /> : <SignIn />}
+            </LoginSection>
         </LoginPageWrapper>
     );
 };
@@ -40,5 +45,28 @@ const LoginSection = styled.form`
     flex-direction: column;
     min-height: 308px;
 `;
+
+const SignUpAndSignIn = styled.div`
+    width: 270px;
+    position: absolute;
+    top: 29%;
+    left: 50%;
+    transform: translate3d(-50%, -50%, 0);
+    font-weight: 700;
+    font-size: 2.4rem;
+    display: flex;
+    justify-content: space-between;
+
+    .line{
+        background: #9FA4A8;
+        height: 28px;
+        width: 2px;
+    }
+`;
+
+const SelectPage = styled.div`
+    cursor: pointer;
+    color: ${({isSignUpPage})=>isSignUpPage ? "#C86400" : "#9FA4A8"};
+`
 
 export default LoginPage;

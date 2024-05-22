@@ -5,6 +5,7 @@ import MainBanner from '../components/Main/MainBanner';
 import MainSearch from '../components/Main/MainSearch';
 import MainContents from '../components/Main/MainContents';
 import axios from 'axios';
+import { Link, Button, Element, Events, animateScroll as scroll, scrollSpy } from 'react-scroll';
 
 const Main = () => {
     const [coinsData, setCoinsData] = useState([]);
