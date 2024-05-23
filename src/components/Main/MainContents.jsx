@@ -3,6 +3,7 @@ import styled from 'styled-components';
 import MainItem from './MainItem';
 import MainPagination from './MainPagination';
 import EmptyDataPage from './EmptyDataPage';
+import Pagination from 'react-js-pagination';
 
 const MainContents = ({ coinsData }) => {
     const [currentPage, setCurrentPage] = useState(1);
@@ -11,6 +12,9 @@ const MainContents = ({ coinsData }) => {
     const firstPostIndex = lastPostIndex - postsPerPage;
     const currentPosts = coinsData.slice(firstPostIndex, lastPostIndex);
 
+    const handlePageChange = (page) => {
+        setCurrentPage(page);
+    }
 
     return (
         <MainContentsSection>
@@ -25,7 +29,17 @@ const MainContents = ({ coinsData }) => {
                         {currentPosts.map((coin, i) => {
                             return <MainItem key={i} coin={coin} />;
                         })}
-                        <MainPagination currentPage={currentPage} totalPosts={coinsData.length} postsPerPage={postsPerPage} setCurrentPage={setCurrentPage} />
+                        <Pagination 
+                            activePage={currentPage}
+                            itemsCountPerPage={postsPerPage}
+                            totalItemsCount={coinsData.length - 1}
+                            pageRangeDisplayed={5}
+                            firstPageText="«"
+                            lastPageText="»"
+                            prevPageText="<"
+                            nextPageText=">"    
+                            onChange={handlePageChange}
+                        />
                     </ContentsWrapper>
                 ) : (
                     <EmptyDataPage />
@@ -75,6 +89,32 @@ const ContentsWrapper = styled.div`
     column-gap: 20px;
     margin-bottom: 229px;
     width: 100%;
+    position: relative;
+
+    .pagination {
+        display: flex;
+        justify-content: center;
+        position: absolute;
+        bottom: -150px;
+        left: 50%;
+        transform: translate(-50%, 0);
+        font-size: 3.6rem;
+
+        li {
+            width: 70px;
+            text-align: center;
+        }
+
+        li a{
+            color: #9FA4A8;
+        }
+
+        li.active a {
+            font-weight: bold;
+            text-decoration: underline;
+            color: ${({theme})=>theme.fontDark};
+        }
+    }
 `;
 
 export default MainContents;

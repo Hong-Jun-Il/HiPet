@@ -5,7 +5,7 @@ import ChannelReview from './ChannelReview';
 
 const SellerInfo = () => {
     const [isSelected, setSelect] = useState(true);
-    const [rating, setRating] = useState(1.8);
+    const [rating, setRating] = useState(4);
     const [reviews, setReviews] = useState(60);
 
     return (
