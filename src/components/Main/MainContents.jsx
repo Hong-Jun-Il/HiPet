@@ -25,7 +25,7 @@ const MainContents = ({ coinsData }) => {
                         {currentPosts.map((coin, i) => {
                             return <MainItem key={i} coin={coin} />;
                         })}
-                        <MainPagination totalPosts={coinsData.length} postsPerPage={postsPerPage} setCurrentPage={setCurrentPage} />
+                        <MainPagination currentPage={currentPage} totalPosts={coinsData.length} postsPerPage={postsPerPage} setCurrentPage={setCurrentPage} />
                     </ContentsWrapper>
                 ) : (
                     <EmptyDataPage />

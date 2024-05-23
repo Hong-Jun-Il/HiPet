@@ -1,13 +1,12 @@
 import React from 'react';
 import styled from 'styled-components';
-import detailedPageVector from "../../assets/detailedPageVector.png";
 import emptyHeart from "../../assets/emptyHeart.svg";
 
 const ProductInfo = ({data}) => {
     const ar = ["#차분함", "#조용함", "#귀여움"];
     return (
         <ProductInfoWrapper className='wrap'>
-            <div className='tags'>
+            {/* <div className='tags'>
                 <span>포유류</span>
                 <div className='vectorImgWrapper'>
                     <img src={detailedPageVector} alt="" />
@@ -17,14 +16,19 @@ const ProductInfo = ({data}) => {
                     <img src={detailedPageVector} alt="" />
                 </div>
                 <span>말티즈</span>
-            </div>
+            </div> */}
             <div className="infoContainer">
                 <div className="productImgWrapper">
                     <img src={data.image} alt="" />
                 </div>
                 <div className="info">
-                    <h2 className='title'>
-                        {data.name}
+                    <h2 className='title-and-category'>
+                        <span className='title'>
+                            {data.name}
+                        </span>
+                        <span className='category'>
+                            포유류
+                        </span>
                     </h2>
                     <span className='price'>
                         {data.current_price.toLocaleString()}원
@@ -65,7 +69,7 @@ const ProductInfoWrapper = styled.section`
     flex-direction: column;
     height: fit-content;
 
-    .tags{
+    /* .tags{
         display: flex;
         font-size: 24px;
         color: #73787E;
@@ -77,7 +81,7 @@ const ProductInfoWrapper = styled.section`
             margin-left: 14px;
             margin-right: 17px;
         }
-    }
+    } */
 
     .infoContainer{
         display: flex;
@@ -96,10 +100,22 @@ const ProductInfoWrapper = styled.section`
             flex-direction: column;
             position: relative;
 
-            .title{
-                font-size: 40px;
+            .title-and-category{
                 margin-bottom: 14px;
-                color: ${({theme})=>theme.fontDark};
+                display: flex;
+
+                .title {
+                    font-size: 40px;
+                    color: ${({theme})=>theme.fontDark};
+                }
+
+                .category{
+                    font-size: 24px;
+                    color: #73787E;
+                    align-self: flex-end;
+                    margin-left: 16.5px;
+                    margin-bottom: 4px;
+                }
             }
 
             .price{
