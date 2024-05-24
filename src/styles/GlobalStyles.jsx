@@ -12,23 +12,23 @@ const Globalstyles = createGlobalStyle`
   body {
     /* 62.5% => 10rem, 1rem = 10px */
     font-size: 62.5% !important;
-    font-family: 'Pretendard-Regular';
+    font-family: 'Pretendard-Regular', "Inter", sans-serif;
   }
 
   a {
     text-decoration: none;
   }
 
-  ul,
+  li,
   ol {
-    list-style: none;
+    list-style-type: none;
   }
 
   img, 
   video{
     width: 100%;
     height: 100%;
-    object-fit: cover;
+    object-fit: fill;
   }
 
   button {
