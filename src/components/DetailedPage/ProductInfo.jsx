@@ -1,5 +1,15 @@
 import React from 'react';
 import styled from 'styled-components';
+<<<<<<< lhj
+import detailedPageVector from "../../assets/detailedPageVector.png";
+import emptyHeart from "../../assets/emptyHeart.svg";
+
+const ProductInfo = ({data}) => {
+    const ar = ["#차분함", "#조용함", "#귀여움"];
+    return (
+        <ProductInfoWrapper className='wrap'>
+            <div className='tags'>
+=======
 import emptyHeart from "../../assets/emptyHeart.svg";
 import prevImg from "../../assets/slide-prev.png";
 import nextImg from "../../assets/slide-next.png";
@@ -47,6 +57,7 @@ const ProductInfo = ({data}) => {
     return (
         <ProductInfoWrapper className='wrap'>
             {/* <div className='tags'>
+>>>>>>> main
                 <span>포유류</span>
                 <div className='vectorImgWrapper'>
                     <img src={detailedPageVector} alt="" />
@@ -56,6 +67,16 @@ const ProductInfo = ({data}) => {
                     <img src={detailedPageVector} alt="" />
                 </div>
                 <span>말티즈</span>
+<<<<<<< lhj
+            </div>
+            <div className="infoContainer">
+                <div className="productImgWrapper">
+                    <img src={data.image} alt="" />
+                </div>
+                <div className="info">
+                    <h2 className='title'>
+                        {data.name}
+=======
             </div> */}
             <div className="infoContainer">
                 <StyledSlider {...settings}>
@@ -71,6 +92,7 @@ const ProductInfo = ({data}) => {
                         <span className='category'>
                             포유류
                         </span>
+>>>>>>> main
                     </h2>
                     <span className='price'>
                         {data.current_price.toLocaleString()}원
@@ -111,6 +133,23 @@ const ProductInfoWrapper = styled.section`
     flex-direction: column;
     height: fit-content;
 
+<<<<<<< lhj
+    .tags{
+        display: flex;
+        font-size: 24px;
+        color: #73787E;
+        margin-bottom: 15px;
+
+        .vectorImgWrapper{
+            width: 6px;
+            height: 12px;
+            margin-left: 14px;
+            margin-right: 17px;
+        }
+    }
+
+=======
+>>>>>>> main
     .infoContainer{
         display: flex;
         gap: 21px;
@@ -128,6 +167,12 @@ const ProductInfoWrapper = styled.section`
             flex-direction: column;
             position: relative;
 
+<<<<<<< lhj
+            .title{
+                font-size: 40px;
+                margin-bottom: 14px;
+                color: ${({theme})=>theme.fontDark};
+=======
             .title-and-category{
                 margin-bottom: 14px;
                 display: flex;
@@ -144,6 +189,7 @@ const ProductInfoWrapper = styled.section`
                     margin-left: 16.5px;
                     margin-bottom: 4px;
                 }
+>>>>>>> main
             }
 
             .price{
@@ -233,6 +279,8 @@ const ProductInfoWrapper = styled.section`
     }
 `;
 
+<<<<<<< lhj
+=======
 const StyledSlider = styled(Slider)`
     flex: 1;
     width: 580px;
@@ -281,6 +329,7 @@ const PrevArrow = styled.div`
     z-index: 3;
 `;
 
+>>>>>>> main
 const Tag = styled.li`
     background: #C86400;
     border-radius: 20px;
@@ -288,6 +337,10 @@ const Tag = styled.li`
     color: #F7F8FA;
     font-size: 16px;
     margin-right: 16px;
+<<<<<<< lhj
+`
+=======
 `;
+>>>>>>> main
 
 export default ProductInfo;

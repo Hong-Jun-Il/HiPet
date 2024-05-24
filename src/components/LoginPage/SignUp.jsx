@@ -17,7 +17,11 @@ const SignUp = () => {
     const [isRepetition, setIsRepetition] = useState(false);
 
     const inputRegexs = {
+<<<<<<< lhj
+        usernameReg: /^[a-zA-Z가-힣]{2,15}$/,
+=======
         usernameReg: /^[a-zA-Z가-힣]{2,10}$/,
+>>>>>>> main
         idReg: /^[A-Za-z0-9]{5,15}$/g,
         pwReg: /^(?=.*[A-Za-z])(?=.*\d)(?=.*[!@#$%^&*(),.?":{}|<>])[A-Za-z\d!@#$%^&*(),.?":{}|<>]{8,}$/g
     };
@@ -52,7 +56,11 @@ const SignUp = () => {
         } else {
             setErrorMessage({
                 ...errorMessage,
+<<<<<<< lhj
+                usernameError: "이름은 유효한 한글/영문 2~15자여야 합니다.",
+=======
                 usernameError: "이름은 유효한 한글/영문 2~10자여야 합니다.",
+>>>>>>> main
             });
         }
     }, [username]);
@@ -124,7 +132,10 @@ const SignUp = () => {
 
     return (
         <>
+<<<<<<< lhj
+=======
         {/* 주소, 닉네임, 추가 */}
+>>>>>>> main
             <UserInput text="이름을 입력해주세요" msg={usernameError} type="text" name="username" value={username} onChange={onChangeUsername} />
             <UserInput text="아이디를 입력해주세요" msg={idError} type="text" name="id" value={id} onChange={onChangeId} />
             <UserInput text="비밀번호를 입력해주세요" msg={pwError} type="password" name="pw" value={pw} onChange={onChangePw} />
