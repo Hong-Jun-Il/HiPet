@@ -6,7 +6,7 @@ import EmptyDataPage from './EmptyDataPage';
 import Pagination from 'react-js-pagination';
 
 const MainContents = ({ coinsData }) => {
-    const [currentPage, setCurrentPage] = useState(1);
+    const [currentPage, setCurrentPage] = useState(2);
     const [postsPerPage, setPostPerPage] = useState(15);
     const lastPostIndex = currentPage * postsPerPage;
     const firstPostIndex = lastPostIndex - postsPerPage;
@@ -98,10 +98,10 @@ const ContentsWrapper = styled.div`
         bottom: -150px;
         left: 50%;
         transform: translate(-50%, 0);
-        font-size: 3.6rem;
+        font-size: 2.6rem;
 
         li {
-            width: 70px;
+            width: 55px;
             text-align: center;
         }
 
@@ -111,7 +111,7 @@ const ContentsWrapper = styled.div`
 
         li.active a {
             font-weight: bold;
-            text-decoration: underline;
+            /* text-decoration: underline; */
             color: ${({theme})=>theme.fontDark};
         }
     }

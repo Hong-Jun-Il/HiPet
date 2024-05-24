@@ -11,9 +11,10 @@ const ProductInfo = ({data}) => {
     const ar = ["#차분함", "#조용함", "#귀여움"];
     const imgAr = [1,2,3,4,5];
     const settings = {
-        dots: true,
+        dots: imgAr.length >= 2,
         infinite: true,
         speed: 500,
+        arrows: imgAr.length >= 2,
         slidesToShow: 1,
         slidesToScroll: 1,
         nextArrow: (
@@ -26,7 +27,23 @@ const ProductInfo = ({data}) => {
               <img src={prevImg} alt="" />
             </PrevArrow>
           ),
+          appendDots: dots => (
+            <div
+              style={{
+                position: "absolute",
+                bottom: "7px",
+                left: "50%",
+                transform: "translate(-50%, 0)",
+                width: "fit-content",
+                height: "fit-content"
+              }}
+            >
+              <ul style={{display: "flex"}}> {dots} </ul>
+            </div>
+          ),
+          dotsClass: 'dots_custom'
       };
+      
     return (
         <ProductInfoWrapper className='wrap'>
             {/* <div className='tags'>
@@ -222,10 +239,24 @@ const StyledSlider = styled(Slider)`
     height: 580px;
     position: relative;
     background: #D9D9D9;
+    overflow: hidden;
     .slick-prev::before,
     .slick-next::before {
         opacity: 0;
         display: none;
+    }
+
+    .dots_custom li button{
+        color: transparent;
+        border: none;
+        height: 10px;
+        width: 10px;
+        border-radius: 100%;
+        margin-left: 5px;
+    }
+
+    .dots_custom li.slick-active button {
+        background-color: #fff;
     }
 `;
 

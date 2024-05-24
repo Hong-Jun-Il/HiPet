@@ -17,7 +17,7 @@ const SignUp = () => {
     const [isRepetition, setIsRepetition] = useState(false);
 
     const inputRegexs = {
-        usernameReg: /^[a-zA-Z가-힣]{2,15}$/,
+        usernameReg: /^[a-zA-Z가-힣]{2,10}$/,
         idReg: /^[A-Za-z0-9]{5,15}$/g,
         pwReg: /^(?=.*[A-Za-z])(?=.*\d)(?=.*[!@#$%^&*(),.?":{}|<>])[A-Za-z\d!@#$%^&*(),.?":{}|<>]{8,}$/g
     };
@@ -52,7 +52,7 @@ const SignUp = () => {
         } else {
             setErrorMessage({
                 ...errorMessage,
-                usernameError: "이름은 유효한 한글/영문 2~15자여야 합니다.",
+                usernameError: "이름은 유효한 한글/영문 2~10자여야 합니다.",
             });
         }
     }, [username]);
