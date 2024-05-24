@@ -1,15 +1,4 @@
 import React from 'react';
-<<<<<<< lhj
-
-const ChannelReview = () => {
-    return (
-        <div>
-            리뷰.
-        </div>
-    );
-};
-
-=======
 import styled from 'styled-components';
 import Stars from './Stars';
 import Review from './Review';
@@ -104,5 +93,4 @@ const NoReviewPage = styled.div`
     
 `;
 
->>>>>>> main
 export default ChannelReview;

@@ -1,14 +1,9 @@
 import React from 'react';
 import styled from 'styled-components';
-<<<<<<< lhj
-
-const ChannelInfo = () => {
-=======
 import Stars from './Stars';
 
 const ChannelInfo = ({ rating, reviews }) => {
 
->>>>>>> main
     return (
         <ChannelInfoWrapper className="wrap">
             <div className="seller">
@@ -25,13 +20,10 @@ const ChannelInfo = ({ rating, reviews }) => {
                     </div>
                 </div>
             </div>
-<<<<<<< lhj
-=======
             <div className="reviewRatingWrapper">
                 <Stars rating={rating} size={2.5} />
                 <span>{rating}</span>
             </div>
->>>>>>> main
         </ChannelInfoWrapper>
     );
 };
@@ -40,10 +32,7 @@ const ChannelInfoWrapper = styled.div`
     padding-top: 100px;
     display: flex;
     justify-content: space-between;
-<<<<<<< lhj
-=======
     padding-bottom: 80px;
->>>>>>> main
 
     .seller{
         display: flex;
@@ -67,9 +56,6 @@ const ChannelInfoWrapper = styled.div`
                 font-size: 12px;
             }
         }
-<<<<<<< lhj
-
-=======
     }
 
     .reviewRatingWrapper{
@@ -82,7 +68,6 @@ const ChannelInfoWrapper = styled.div`
             margin-bottom: 5px;
             margin-left: 15px;
         }
->>>>>>> main
     }
 `;
 

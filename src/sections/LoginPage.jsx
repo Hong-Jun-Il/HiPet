@@ -1,32 +1,11 @@
-<<<<<<< lhj
-import React from 'react';
-import styled from 'styled-components';
-import { Route, Routes } from 'react-router-dom';
-import LoginPageHeader from '../components/LoginPage/LoginPageHeader';
-import SignUpAndSignIn from '../components/LoginPage/SignUpAndSignIn';
-=======
 import React, { useState } from 'react';
 import styled from 'styled-components';
 import { Route, Routes } from 'react-router-dom';
 import LoginPageHeader from '../components/LoginPage/LoginPageHeader';
->>>>>>> main
 import SignIn from '../components/LoginPage/SignIn';
 import SignUp from '../components/LoginPage/SignUp';
 
 const LoginPage = () => {
-<<<<<<< lhj
-
-    return (
-        <LoginPageWrapper>
-        <LoginPageHeader />
-        <SignUpAndSignIn />
-        <LoginSection>
-            <Routes>
-                <Route path='/' element={<SignUp />} />
-                <Route path='/signIn' element={<SignIn />} />
-            </Routes>
-        </LoginSection>
-=======
     const [isSignUpPage, setIsSignUpPage] = useState(true);
 
     return (
@@ -44,7 +23,6 @@ const LoginPage = () => {
             <LoginSection>
                 {isSignUpPage ? <SignUp /> : <SignIn />}
             </LoginSection>
->>>>>>> main
         </LoginPageWrapper>
     );
 };
@@ -68,8 +46,6 @@ const LoginSection = styled.form`
     min-height: 308px;
 `;
 
-<<<<<<< lhj
-=======
 const SignUpAndSignIn = styled.div`
     width: 270px;
     position: absolute;
@@ -93,5 +69,4 @@ const SelectPage = styled.div`
     color: ${({isSignUpPage})=>isSignUpPage ? "#C86400" : "#9FA4A8"};
 `
 
->>>>>>> main
 export default LoginPage;

@@ -22,11 +22,7 @@ const DetailedPageWrapper = styled.main`
     min-height: 100vh;
     display: flex;
     flex-direction: column;
-<<<<<<< lhj
-    //마진 상쇄 해결하기 위한 border
-=======
     //마진 상쇄를 해결하기 위한 border
->>>>>>> main
     border: 0.1px solid transparent;
     
     .wrap{
