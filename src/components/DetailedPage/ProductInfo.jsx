@@ -1,9 +1,32 @@
 import React from 'react';
 import styled from 'styled-components';
 import emptyHeart from "../../assets/emptyHeart.svg";
+import prevImg from "../../assets/slide-prev.png";
+import nextImg from "../../assets/slide-next.png";
+import Slider from "react-slick";
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
 
 const ProductInfo = ({data}) => {
     const ar = ["#차분함", "#조용함", "#귀여움"];
+    const imgAr = [1,2,3,4,5];
+    const settings = {
+        dots: true,
+        infinite: true,
+        speed: 500,
+        slidesToShow: 1,
+        slidesToScroll: 1,
+        nextArrow: (
+            <NextArrow>
+              <img src={nextImg} alt="" />
+            </NextArrow>
+          ),
+          prevArrow: (
+            <PrevArrow>
+              <img src={prevImg} alt="" />
+            </PrevArrow>
+          ),
+      };
     return (
         <ProductInfoWrapper className='wrap'>
             {/* <div className='tags'>
@@ -18,9 +41,11 @@ const ProductInfo = ({data}) => {
                 <span>말티즈</span>
             </div> */}
             <div className="infoContainer">
-                <div className="productImgWrapper">
-                    <img src={data.image} alt="" />
-                </div>
+                <StyledSlider {...settings}>
+                    {imgAr.map((img,i)=>{
+                        return <CustomImage key={i} src={emptyHeart} />
+                    })}
+                </StyledSlider>
                 <div className="info">
                     <h2 className='title-and-category'>
                         <span className='title'>
@@ -68,20 +93,6 @@ const ProductInfoWrapper = styled.section`
     display: flex;
     flex-direction: column;
     height: fit-content;
-
-    /* .tags{
-        display: flex;
-        font-size: 24px;
-        color: #73787E;
-        margin-bottom: 15px;
-
-        .vectorImgWrapper{
-            width: 6px;
-            height: 12px;
-            margin-left: 14px;
-            margin-right: 17px;
-        }
-    } */
 
     .infoContainer{
         display: flex;
@@ -205,6 +216,40 @@ const ProductInfoWrapper = styled.section`
     }
 `;
 
+const StyledSlider = styled(Slider)`
+    flex: 1;
+    width: 580px;
+    height: 580px;
+    position: relative;
+    background: #D9D9D9;
+    .slick-prev::before,
+    .slick-next::before {
+        opacity: 0;
+        display: none;
+    }
+`;
+
+const CustomImage = styled.img`
+    width: 580px;
+    height: 580px;
+`
+
+const NextArrow = styled.div`
+    width: 20px;
+    height: 40px;
+    position: absolute;
+    right: 3%;
+    z-index: 3;
+`;
+
+const PrevArrow = styled.div`
+    width: 20px;
+    height: 40px;
+    position: absolute;
+    left: 3%;
+    z-index: 3;
+`;
+
 const Tag = styled.li`
     background: #C86400;
     border-radius: 20px;
@@ -212,6 +257,6 @@ const Tag = styled.li`
     color: #F7F8FA;
     font-size: 16px;
     margin-right: 16px;
-`
+`;
 
 export default ProductInfo;
